@@ -30,14 +30,14 @@ function bubbleSort(iArr) {
     arr[i] = arr[j];
     arr[j] = temp;
   }
-  var n = iArr.length;
+  var n = iArr.length - 1;
   // 从左边开始
   for (var i = 0; i < n; i++) {
     // 每次冒泡完毕，右侧新固定一个较大值
-    for (var j = 1; j < n - i; j++) {
+    for (var j = 0; j < n - i; j++) {
       // 比较，交换大的于右侧
-      if (iArr[j - 1] > iArr[j]) {
-        swap(iArr, j - 1, j);
+      if (iArr[j] > iArr[j + 1]) {
+        swap(iArr, j, j + 1);
       } else {
         continue;
       }
@@ -50,12 +50,12 @@ function bubbleSort(iArr) {
 ## 验证
 
 ```javascript
-insertionSort([5, 2, 4, 6, 1, 3]);
+bubbleSort([5, 2, 4, 6, 1, 3]);
 // 输出[1, 2, 3, 4, 5, 6]
 
-insertionSort([2, 1, 3, 1, 5]);
+bubbleSort([2, 1, 3, 1, 5]);
 // 输出[1, 1, 2, 3, 5]
 
-insertionSort([5, 2, 12, 2, 134, 1, 3, 34, 4, 6, 1, 3, 4]);
+bubbleSort([5, 2, 12, 2, 134, 1, 3, 34, 4, 6, 1, 3, 4]);
 // 输出[1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 12, 34, 134]
 ```
